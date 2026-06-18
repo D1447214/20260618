@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PlayMate 遊戲陪玩平台</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="PlayMate 導覽">
+        <a class="brand" href="#companions" aria-label="PlayMate 首頁">
+          <span class="brand-mark">PM</span>
+          <span>
+            <strong>PlayMate</strong>
+            <small>遊戲陪玩平台</small>
+          </span>
+        </a>
+
+        <nav class="nav-list">
+          <a class="active" href="#companions">陪玩名單</a>
+          <a href="#booking">預約單</a>
+          <a href="#video">影片覆盤</a>
+          <a href="#subscribe">訂閱方案</a>
+        </nav>
+
+        <section class="side-panel">
+          <div class="panel-title">服務類型</div>
+          <div class="segments vertical" id="categoryButtons">
+            <button class="segment active" type="button" data-category="rank">排位上分</button>
+            <button class="segment" type="button" data-category="practice">技巧練習</button>
+            <button class="segment" type="button" data-category="fun">輕鬆娛樂</button>
+          </div>
+        </section>
+
+        <section class="side-panel subscription-mini">
+          <div class="panel-title">目前方案</div>
+          <strong id="currentPlan">Free</strong>
+          <span id="currentPlanNote">基本搜尋與預約功能</span>
+        </section>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <label class="search-box" aria-label="搜尋陪玩">
+            <span aria-hidden="true">Search</span>
+            <input id="searchInput" type="search" placeholder="搜尋姓名、遊戲、擅長風格">
+          </label>
+          <div class="top-actions">
+            <select id="gameSelect" aria-label="選擇遊戲">
+              <option value="all">全部遊戲</option>
+              <option value="APEX">APEX</option>
+              <option value="LOL">英雄聯盟</option>
+              <option value="Valorant">Valorant</option>
+              <option value="Minecraft">Minecraft</option>
+              <option value="Genshin">原神</option>
+            </select>
+            <button class="primary-button" id="quickBookButton" type="button">快速配對</button>
+          </div>
+        </header>
+
+        <section class="panel positioning-panel" id="value">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">POSITIONING</p>
+              <h2>核心定位關鍵字</h2>
+            </div>
+            <span class="feature-pill">定位你的服務價值</span>
+          </div>
+          <p class="positioning-intro">
+            這類關鍵字可以直接點選，快速帶入分析重點，讓玩家一眼看出你能解決他的問題。
+          </p>
+          <ul class="keyword-list" aria-label="核心定位關鍵字">
+            <li class="keyword-button" role="button" tabindex="0" data-keyword-analysis="diagnosis">
+              <span class="keyword-marker" aria-hidden="true"></span>
+              <div>
+                <strong>精準診斷</strong>
+                <span>（強調不是盲目練習）</span>
+              </div>
+              <span class="keyword-action">點我分析</span>
+            </li>
+            <li class="keyword-button" role="button" tabindex="0" data-keyword-analysis="review">
+              <span class="keyword-marker" aria-hidden="true"></span>
+              <div>
+                <strong>實戰覆盤</strong>
+                <span>（強調影像回顧與檢討）</span>
+              </div>
+              <span class="keyword-action">點我分析</span>
+            </li>
+            <li class="keyword-button" role="button" tabindex="0" data-keyword-analysis="win-rate">
+              <span class="keyword-marker" aria-hidden="true"></span>
+              <div>
+                <strong>勝率優化</strong>
+                <span>（直接對應「排位上分」的動機）</span>
+              </div>
+              <span class="keyword-action">點我分析</span>
+            </li>
+            <li class="keyword-button" role="button" tabindex="0" data-keyword-analysis="data">
+              <span class="keyword-marker" aria-hidden="true"></span>
+              <div>
+                <strong>數據化提升</strong>
+                <span>（強調科學化的分析方式）</span>
+              </div>
+              <span class="keyword-action">點我分析</span>
+            </li>
+            <li class="keyword-button" role="button" tabindex="0" data-keyword-analysis="custom">
+              <span class="keyword-marker" aria-hidden="true"></span>
+              <div>
+                <strong>客製化指導</strong>
+                <span>（強調針對個人弱點的解決方案）</span>
+              </div>
+              <span class="keyword-action">點我分析</span>
+            </li>
+          </ul>
+          <div class="keyword-analysis-panel" id="keywordAnalysisPanel" aria-live="polite">
+            <div class="keyword-analysis-empty">
+              點選上方任一關鍵字，這裡會立即顯示對應的分析詞與重點整理。
+            </div>
+          </div>
+          <div class="keyword-recommendation-panel" id="keywordRecommendationPanel" aria-live="polite">
+            <div class="keyword-analysis-empty">
+              選擇關鍵字後，這裡會直接列出最適合的教練推薦。
+            </div>
+          </div>
+        </section>
+
+        <section class="hero-section">
+          <div class="hero-copy">
+            <p class="eyebrow">REAL PLAYER COMPANION</p>
+            <h1>精準診斷你的弱點，陪你把勝率打上去。</h1>
+            <p>從實戰覆盤、數據化提升到客製化指導，依照遊戲、需求與預算挑選教練，讓每次開局都有明確目標。</p>
+            <div class="hero-actions">
+              <button class="primary-button" type="button" data-jump-category="rank">看上分陪玩</button>
+              <button class="secondary-button" type="button" data-jump-category="practice">找練習教練</button>
+              <button class="secondary-button" type="button" data-jump-category="fun">輕鬆開黑</button>
+            </div>
+          </div>
+
+          <section class="session-card" id="booking">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">BOOKING</p>
+                <h2>預約單</h2>
+              </div>
+              <span class="status-pill" id="bookingStatus">尚未選擇</span>
+            </div>
+            <div class="booking-summary" id="bookingSummary">
+              <p>選擇陪玩後，這裡會即時計算時數與總金額。</p>
+            </div>
+            <form class="booking-form" id="bookingForm">
+              <label>
+                <span>預約時數</span>
+                <select id="durationSelect">
+                  <option value="1">1 小時</option>
+                  <option value="2">2 小時</option>
+                  <option value="3">3 小時</option>
+                </select>
+              </label>
+              <label>
+                <span>備註</span>
+                <textarea id="bookingNotes" rows="4" placeholder="例如：想打積分、希望語音、需要復盤某個角色"></textarea>
+              </label>
+              <button class="primary-button" type="submit">送出預約</button>
+            </form>
+          </section>
+        </section>
+
+        <section class="toolbar" id="companions">
+          <div>
+            <p class="eyebrow">COMPANIONS</p>
+            <h2>陪玩推薦</h2>
+          </div>
+          <div class="result-meta" id="resultMeta">0 位陪玩</div>
+        </section>
+
+        <section class="companion-grid" id="companionGrid" aria-live="polite"></section>
+
+        <section class="panel video-panel" id="video">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">VIDEO REVIEW</p>
+              <h2>影片覆盤</h2>
+            </div>
+            <span class="feature-pill" id="videoPlanPill">Free：基礎摘要</span>
+          </div>
+          <div class="video-grid">
+            <form class="video-form" id="videoForm">
+              <label>
+                <span>影片連結</span>
+                <input id="videoUrl" type="url" placeholder="YouTube 或 Twitch VOD 連結">
+              </label>
+              <label>
+                <span>想看的重點</span>
+                <textarea id="videoNotes" rows="5" placeholder="例如：0:20 會戰站位、3:40 技能使用、整體地圖意識"></textarea>
+              </label>
+              <button class="primary-button" type="submit">產生覆盤</button>
+            </form>
+            <div class="analysis-card" id="analysisResult">
+              <h3>覆盤摘要</h3>
+              <p>提交影片後，系統會依照你的方案顯示分析重點與練習建議。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel subscribe-panel" id="subscribe">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">SUBSCRIPTION</p>
+              <h2>訂閱方案</h2>
+            </div>
+          </div>
+          <div class="plan-grid" id="planGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="ad-modal" id="adModal" aria-hidden="true">
+      <div class="ad-dialog" role="dialog" aria-modal="true" aria-labelledby="adTitle">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">SPONSOR VIDEO</p>
+            <h2 id="adTitle">免費方案影片</h2>
+          </div>
+          <button class="icon-button" id="adCloseButton" type="button" aria-label="關閉影片">X</button>
+        </div>
+        <div class="ad-video" id="adVideoSlot"></div>
+        <p class="ad-note">升級 Plus 或 Pro 後就不會定時播放此影片。</p>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
